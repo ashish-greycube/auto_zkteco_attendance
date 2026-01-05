@@ -29,8 +29,8 @@ def cdata():
             frappe.log_error("Attendance", f"   → Log: {line}")
             # Example: Save to Frappe Doc
             # process_attendance_log(line)
-        
-        return Response("OK", mimetype="text/plain")
+        return "OK"
+        # return Response("OK", mimetype="text/plain")
 
     if table == "USER" and data:
         users = data.decode("utf-8").strip().splitlines()
@@ -38,9 +38,11 @@ def cdata():
             print(f"   → User: {line}")
             frappe.log_error("Attendance", f"   → User: {line}")
         
-        return Response("OK", mimetype="text/plain")
+        return "OK"
+        # return Response("OK", mimetype="text/plain")
 
-    return Response("OK", mimetype="text/plain")
+    return "OK"
+    # return Response("OK", mimetype="text/plain")
 
 
 @frappe.whitelist(allow_guest=True)
