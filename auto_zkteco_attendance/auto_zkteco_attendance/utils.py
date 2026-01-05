@@ -8,7 +8,7 @@ import os
 
 def log_request():
     '''Logs all requests to site-name/logs/auto_zkteco.log'''
-    frappe.logger("auto_zkteco", allow_site=frappe.local.site).error(
+    frappe.logger("auto_zkteco", allow_site=frappe.local.site).info(
         {
             "raw_body": (
                 frappe.request.get_data(as_text=True)
@@ -78,7 +78,7 @@ class CustomAPIRenderer:
                 pass
 
         except Exception as e:
-            frappe.log_error(e)
+            frappe.logger("auto_zkteco").error(frappe.get_traceback())
 
         return Response("OK", mimetype="text/plain")
 
