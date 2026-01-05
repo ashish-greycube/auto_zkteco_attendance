@@ -247,3 +247,7 @@ app_license = "mit"
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
 
+website_route_rules = [
+    {"from_route": "/iclock/cdata", "to_route": "auto_zkteco_attendance.__init__.cdata"},
+    {"from_route": "/iclock/getrequest", "to_route": "auto_zkteco_attendance.__init__.getrequest"},
+]
