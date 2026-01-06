@@ -7,6 +7,8 @@ import os
 
 
 def log_request():
+    # frappe.app.py
+    # frappe.logger("frappe.web", allow_site=frappe.local.site).error(
     '''Logs all requests to site-name/logs/auto_zkteco.log'''
     frappe.logger("auto_zkteco", allow_site=frappe.local.site).error(
         {
@@ -56,7 +58,7 @@ class CustomAPIRenderer:
         return self.path.startswith("iclock")
 
     def render(self):
-        log_request()
+        # log_request()
 
         result = {}
 
@@ -80,7 +82,7 @@ class CustomAPIRenderer:
         except Exception as e:
             frappe.logger("auto_zkteco").error(frappe.get_traceback())
 
-        return Response("OK", mimetype="text/plain")
+        # return Response("OK", mimetype="text/plain")
 
         # frappe.local.response = result
         # return build_response("json")
