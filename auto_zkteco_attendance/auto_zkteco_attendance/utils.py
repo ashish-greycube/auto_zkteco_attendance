@@ -82,7 +82,7 @@ class CustomAPIRenderer:
         except Exception as e:
             frappe.logger("auto_zkteco").error(frappe.get_traceback())
 
-        # return Response("OK", mimetype="text/plain")
+        return Response("OK", mimetype="text/plain")
 
         # frappe.local.response = result
         # return build_response("json")
